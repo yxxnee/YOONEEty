@@ -1,19 +1,53 @@
 @charset "utf-8";
 
-* {margin: 0;padding: 0;box-sizing: border-box;}
+/* 스타일 초기화 */
+/* html { font-size: 62.5%; } 반응형폰트크기 설정 62.5% = 10px */
 
-ol,ul {list-style: none;}
+/* 요소 여백 초기화  */
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
-a {text-decoration: none;color: #000;}
+/* 하이퍼링크 설정 */
+a { color: #000; text-decoration: none; }
 
+/* 목록 불릿 없애기 */
+ol, ul { list-style: none; }
+
+/* 테이블 - 마크업에 'cellspacing="0"' 지정 함께 필요 */
+table { border-collapse: collapse; border-spacing: 0; border: 0 none; width: 100%; }
+
+/* 텍스트 관련 요소 초기화 */
+address, caption, em { font-weight: normal; font-style: normal; }
+
+/* 웹브라우저에서 안보이게  */
+caption, legend, hr { display: none; }
+
+/* 테두리 없애기 */ /* img 빼고 폼 영역 */
+fieldset, img, input, select, textarea { border: 0 none; outline: none; } 
+
+/* 수직정렬 */ /* 미묘하게 안맞는 칸 정렬맞추기 */
+input, select, textarea { vertical-align: middle; }
+
+/* line-height 없애기 */
+img { vertical-align: top; }
+/* section {margin-top: 100px;} */
 body { -ms-overflow-style: none; font-family: 'Oswald', 'Noto Sans KR', sans-serif;color: #000;background: #fff;line-height: 1.5;font-size: 100%;}
 body::-webkit-scrollbar {display: none;}
 
-.inner {max-width: 1600px; margin: 0 auto;}
+.inner {max-width: 1400px; margin: 0 auto;}
 
 #wrap {overflow: hidden;}
 
-
+h2 { margin-left: 100px;
+     color: #000;
+     -webkit-text-stroke-width: 1;
+     font-family: "HCR Batang";
+     font-size: 60px;
+     font-style: normal;
+     font-weight: 700;
+     line-height: normal;
+     letter-spacing: -1.2px;
+position: relative;}
+h2::after {content: '';position: absolute; left: 15px; top: 0; width: 7px;height: 7px; border-radius: 7px; background: #0066ff;}
 
 /* header */
 #header  { background: rgba(0, 0, 0, 0.5); position: fixed;left: 0;top:0;width: 100%; z-index: 9; transition: all 1s; } 
@@ -29,46 +63,138 @@ align-items: center; position: relative;}
 #header.up { transform: translateY(-80px); }
 
 /* sec1 */
-#sec1 video { /* display: none; */ /* 여기 */object-fit: cover;width: 100%;height: 90%;}
+#sec1 video { display: flex; /* 여기 */object-fit: cover;width: 100%;height: 90%;}
 
 /* sec2 */
-#sec2 {width: 100%; height: 100%;background: #FFF;display: flex;  /* flex */}
-#sec2 h2 {color: #555;font-family: HCR Batang;font-size: 35px;font-style: normal; font-weight: 700;line-height: normal;letter-spacing: -0.7px;}
-#sec2 h3 {text-align: center;padding: 50px 0;}
+#sec2 {padding-bottom: 100px; width: 100%; height: 100%;background: #FFF; }
+/* #sec2 h2 {color: #555;font-family: HCR Batang;font-size: 35px;font-style: normal; font-weight: 700;line-height: normal;letter-spacing: -0.7px;} */
+#sec2 h3 {text-align: center;padding: 50px 0;color: #555;
+     font-family: "HCR Batang";
+     font-size: 35px;
+     font-style: normal;
+     font-weight: 700;
+     line-height: normal;
+     letter-spacing: -0.7px;}
 
-#sec2 .inner {width: 100%; height: 80%;}
-#sec2 .me {display: flex;}
+/* #sec2 .inner {width: 100%; height: 80%;} */
+#sec2 .me {display: flex;}/* 여기 */
 
-#sec2 .me .profile {width:  calc(100% / 2);}
-#sec2 .me .profile .data {display: flex;}
+#sec2 .me .profile {padding-right: 20px; border-right: #eee solid 0.5px; width:  55%;}
+#sec2 .me .profile .data {display: flex; gap: 30px;}
+#sec2 .me .profile .data .txt {text-align: left;}
+#sec2 .me .profile .data th {color: #555;
+     font-family: "HCR Batang";
+     font-size: 25px;
+     font-style: normal;
+     font-weight: 700;
+     text-transform: lowercase;}
+#sec2 .me .profile .data td {padding-bottom: 20px; color: #555;
+     font-family: "HCR Batang";
+     font-size: 17px;
+     font-style: normal;
+     font-weight: 400;
+     line-height: 102%; /* 17.34px */
+     letter-spacing: -0.34px;}
 
-#sec2 .me .skill {width: calc(100% / 2);}
+#sec2 .me .profile .data .photo img {width: 400px;}
+
+
+#sec2 .me .skill {width: 45%;}
 
 /* sec2 graph */
+
 .graph { display: flex; flex-wrap: wrap; justify-content: center; width: 60%; height: 70%; margin: 0 auto; }
-.graph li { width: calc(100% / 3); display: flex; align-items: center; flex-direction: column; }
+.graph li { width: calc(100% / 3); display: flex; align-items: center; flex-direction: column; color: #000;
+     font-family: "Roboto Serif";
+     font-size: 17px;
+     font-style: normal;
+     font-weight: 400;
+     line-height: normal;
+     letter-spacing: -0.34px;}
 
 .chart {width: 70px; height: 70px; position: relative; text-align: center; font-size: 14px; font-weight: 700;}
 .chart span { order: 2; text-align: center;}
 .chart canvas {width: 70px; height: 70px; order: 1;}
 
 /* sec3 */
-#sec3 {  display: flex; /* flex */ flex-wrap: nowrap; width: 400%; height: 100vh;}
-#sec3 h2 { font-size: 100px;}
-#sec3>div { width: 50%;height: 100vh; display: flex; justify-content: center; align-items: center;}
-#sec3 dl { padding: 100px; letter-spacing: -2px;}
-#sec3>div:last-child dl { padding: 100px 500px 100px 100px;}
-#sec3 dl dt {  font-size: 40px;  font-weight: 700;}
-#sec3 dl dt span { font-size: 40px; font-weight: 700; font-style: italic;
- display: block;}
-#sec3 dl dd { font-size: 20px; padding: 50px 0 0; color: rgba(0, 0, 0, 0.6)
-}
-#sec3 dl dd a { letter-spacing: 0;}
+#sec3 { position: relative; display: flex; /* 여기 */ flex-wrap: nowrap; width: 400%; height: 100vh;}
+#sec3 h2::after {content: '';position: absolute; left: 25px; top: 0; width: 7px;height: 7px; border-radius: 7px; background: #0066ff;}
+#sec3>div { width: 25%;height: 100vh; display: flex; justify-content: center; align-items: center;}
+
+
+/* #sec3 h2 {position: absolute; left: 160px; top: 20px;} */
+
+/* #sec3 dl dt span { font-size: 40px; font-weight: 700; font-style: italic;
+ display: block;} */
+ /* #sec3 img{width: 100%;} */
+#sec3 .prod1 .con { position: relative;  }
+#sec3 .prod1 .color {position: absolute; top: 10px; left: 0; line-height: 0; width: 100%; gap: 5px; display: flex; }
+#sec3 .prod1 .color .color_1 {border-radius: 10px; width: 15px;height: 15px; background: #6FAB9F;}
+#sec3 .prod1 .color .color_2 {border-radius: 10px; width: 15px;height: 15px; background: #DCCCB3;}
+#sec3 .prod1 span , .prod2 span {margin-left: -90px; margin-bottom: -20px; color: #AAA; display: block;
+     -webkit-text-stroke-width: 0.5;
+     -webkit-text-stroke-color: #AAA;
+     font-family: "HCR Batang Ext";
+     font-size: 30px;
+     font-style: normal;
+     font-weight: 400;
+     line-height: normal;
+     letter-spacing: -0.6px;}
+#sec3 .prod1  dt , .prod2 dt{color: #555;
+-webkit-text-stroke-width: 0.5;
+-webkit-text-stroke-color: #555;
+font-family: "HCR Batang Ext";
+font-size: 120px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+letter-spacing: -2.4px;}
+#sec3 .prod1 {position: relative;}
+#sec3 .prod1 dl { position: absolute;left:75%; top:25%;}
+
+#sec3 dl dd { margin-bottom: 20px; display: flex; justify-content: center; gap: 20px;  font-size: 20px;/*  padding: 50px 0 0; */ color: rgba(0, 0, 0, 0.6)}#sec3 dl dd a { letter-spacing: 0;}
+#sec3 th {color: #555;
+     text-align: right;
+     font-family: "HCR Batang Ext";
+     font-size: 20px;
+     font-style: normal;
+     font-weight: 400;
+     line-height: normal;
+     letter-spacing: -0.4px; text-align: right; padding-right: 20px;}
+#sec3 td {color: #AAA;
+     font-family: "HCR Batang Ext";
+     font-size: 20px;
+     font-style: normal;
+     font-weight: 400;
+     line-height: normal;
+     letter-spacing: -0.6px;}
+
+#sec3 dd a {  display: inline-block; padding: 5px 15px;border: 1px solid #AAA; color: #AAA;
+     font-family: "HCR Batang Ext";
+     font-size: 20px;
+     font-style: normal;
+     font-weight: 400;
+     line-height: normal;
+     letter-spacing: -0.4px;
+align-items: flex-end; transition: background 0.5s;}
+#sec3 dd a:hover {color: #fff; background: #000;}
 
 /* sec4 */
-#sec4 {width: 100%; height: 900px;}
+#sec4  {  overflow: hidden; width: 100%; height: 1000px;}
+#sec4 .box { display: flex;}
+#sec4 .box .blander a::after{content: ''; background: rgba(0, 0, 0, 0.5);}
+#sec4 .box .blander a:hover:after{ display: block; }
+#sec4 .box2 .logo_bom {display: flex;}
+#sec4 .box2 .logo_dogrrr {display: flex;}
+
+
+#sec4 img {width:100%; }
+#sec4 .box .blander {position: relative;}
+#sec4 .box .blander::after {width:100%; height: 100%; transition: opacity 0.5s; opacity: 0; background: rgba(0, 0, 0, 0.5); display: block; position: absolute; left: 0;top: 0; content: ''; }
+#sec4 .box .blander:hover:after {opacity: 1;}
+
 
 /* footer */
-/* #footer { width: 100vw; height: 100vh;}
+#footer { width: 100vw; height: 100vh;}
 
-#footer img { object-fit: cover; width: 100%; height: 100%;} */
+#footer img { object-fit: cover; width: 100%; height: 100%;}

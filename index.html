@@ -36,7 +36,7 @@
             </header>
 
             <main id="main" data-scrollbar>
-                
+
                 <section id="sec1">
                     <video src="img/main/video_1.mp4" autoplay muted loop></video>
                 </section><!-- sec1 -->
@@ -266,13 +266,13 @@
                                 <div class="logo_bom">
                                     <img src="img/main/bom1.png" alt="">
                                     <img src="img/main/bom2.png" alt="">
-                                    <a href="">ALWASY OPEN</a>
+                                    <a href="img/main/bom_concept.pdf" target="_blank">ALWASY OPEN</a>
 
                                 </div><!-- logo_bom -->
                                 <div class="logo_dogrrr">
                                     <img src="img/main/dogrrr2.png" alt="">
                                     <img src="img/main/dogrrr.png" alt="">
-                                    <a href="">DOG-RRR</a>
+                                    <a href="img/main/dog_concept.pdf" target="_blank">DOG-RRR</a>
 
                                 </div><!-- logo_dogrrr -->
                             </div><!-- graphic -->
@@ -287,8 +287,15 @@
                     <video id="myVideo" src="img/main/yooneety .mp4"></video>
             </main>
 
-            <footer id="footer contact">
-                <img src="img/common/contact.png" alt="">
+            <footer id="footer">
+                <div class="contact">
+                    <img src="img/common/contact.png" alt="">
+                    <div class="txt">
+                        <img src="img/common/profile.png" alt="contact">
+                    </div>
+                </div>
+                <p>1px의 중요성을 아는<br>
+                    올바른 디자이너가 되겠습니다.</p>
             </footer>
 
         </div><!-- wrap -->
@@ -331,6 +338,11 @@
             $("#header").addClass("up");
         });
 
+        $(".contact_btn").click(function () {
+    $("html").animate({
+      scrollTop: '8177'
+    }, 0);
+  });
         //sec2 chart
         $(window).scroll(function () {
             var aCont3 = $("#sec2").offset().top - 500;

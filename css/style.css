@@ -69,7 +69,7 @@ align-items: center; position: relative;}
 #sec1 video { display: flex; /* 여기 */object-fit: cover;width: 100%;height: 90%;}
 
 /* sec2 */
-#sec2 {padding-bottom: 100px; width: 100%; height: 100%;}
+#sec2 {padding-bottom: 200px; width: 100%; height: 100%;}
 /* #sec2 h2 {color: #555;font-family: HCR Batang;font-size: 35px;font-style: normal; font-weight: 700;line-height: normal;letter-spacing: -0.7px;} */
 #sec2 h3 {text-align: center;padding: 50px 0;color: #555;
      font-family: "HCR Batang";
@@ -106,7 +106,7 @@ align-items: center; position: relative;}
 
 /* sec2 graph */
 
-.graph { display: flex; flex-wrap: wrap; justify-content: center; width: 60%; height: 70%; margin: 0 auto; }
+.graph { align-items: center; display: flex; flex-wrap: wrap; justify-content: center; width: 60%; height: 70%; margin: 0 auto; }
 .graph li { width: calc(100% / 3); display: flex; align-items: center; flex-direction: column; color: #000;
      font-family: "Roboto Serif";
      font-size: 17px;
